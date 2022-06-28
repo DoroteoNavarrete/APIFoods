@@ -7,29 +7,20 @@ import { useState } from 'react'
 
 function StyleSwitcher() {
 
-  const [activeStyle, setActiveStyle] = useState('moon');
+  const [activeStyle, setActiveStyle] = useState(true);
+
+  const updateStyle = () => {
+    if(activeStyle)
+      setActiveStyle(false);
+    else
+      setActiveStyle(true);
+      document.body.classList.toggle('dark')
+  }
 
   return (
     <Icon>
-      <ButtonDN className={setActiveStyle} onClick={() => {
-        if(activeStyle === 'moon') {
-          document.body.classList.toggle("dark");
-          setActiveStyle('sun');
-        } else if (activeStyle === 'sun'){
-          document.body.classList.remove('dark');
-          setActiveStyle('moon');
-        }
-      }}>
-      {activeStyle === 'moon' && (
-          <div>
-            <FaMoon />
-          </div>
-        )}
-      {activeStyle === 'sun' && (
-          <div>
-            <FaSun />
-          </div>
-        )}       
+      <ButtonDN onClick={updateStyle}>
+      {activeStyle ? <FaMoon /> : <FaSun />}     
       </ButtonDN>
     </Icon>
   )
@@ -53,7 +44,13 @@ const Icon = styled.div`
 
 const ButtonDN = styled.button`
   background: none;
-  border: none;
+  border: 1px solid var(--bg-black);
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 15px var(--bg-black);
 `
 
 export default StyleSwitcher

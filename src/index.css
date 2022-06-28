@@ -20,7 +20,8 @@ body.dark {
 }
 
 :root{
-  --bg-white-800:rgb(236, 247, 180);
+  color: #a84304;
+  --bg-white-800:rgb(145, 214, 99);
   --bg-black: #302e4d;
   --bg-black-gradient: linear-gradient(35deg, #423f73, #302e4d);
   --bg-button-active: linear-gradient(to right, #f27121, #e94057);
@@ -53,4 +54,9 @@ a{
   margin-left: 0.5rem;
 }
 
+@media (max-width: 774px) {
+  .Splide{
+    color: red;
+  }
+}
 

@@ -12,8 +12,11 @@ function App() {
       <BrowserRouter>
         <StyleSwitcher />
         <Nav>
-          <Llogo />
-          <Logo to={"/"}>RestaurantApi</Logo>
+          <Logo to={"/"}>
+            <p>
+              Res <Llogo /> aurant
+            </p>
+          </Logo>
         </Nav>
         <Category />
         <Search />
@@ -25,12 +28,13 @@ function App() {
 
 const Llogo = styled(GiKnifeFork)`
   color: var(--text-black);
-  font-size: 3rem;
+  font-size: 3.5rem;
+  transform: rotate(295deg) translate(1rem, -10%);
+  margin-left: 15px;
 `;
 
 const Logo = styled(Link)`
   text-decoration: none;
-  font-size: 2rem;
   font-weight: 400;
   font-family: "Lobster Two", cursive;
   font-style: italic;
@@ -45,8 +49,17 @@ const Nav = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  p {
+    font-size: 3rem;
+    display: flex;
+  }
+
   :hover {
     transform: scale(1.05);
+
+    svg {
+      color: #a84304;
+    }
   }
 `;
 

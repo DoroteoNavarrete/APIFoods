@@ -17,7 +17,9 @@ function Search() {
   return (
     <FormStyle onSubmit={submitDefault}>
       <div>
-        <FaSearch />
+        <button>
+          <FaSearch />
+        </button>
         <input onChange={(e) => setInput(e.target.value)} type="text" value={input} />
       </div>
     </FormStyle>
@@ -44,7 +46,7 @@ const FormStyle = styled.form`
     background: var(--bg-black-gradient);
     font-size: 1.5rem;
     color: var(--text-white-900);
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 3.5rem;
     border: none;
     border-radius: 1rem;
     outline: none;
@@ -57,6 +59,25 @@ const FormStyle = styled.form`
     left: 0%;
     transform: translate(100%, -50%);
     color: var(--text-white-900);
+    font-size: 1.2rem;
+  }
+
+  button {
+    border-radius: 1rem;
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 50%;
+    border: none;
+    transform: translate(0%, -50%);
+    background: #423f73;
+    height: 100%;
+    width: 3.5rem;
+  }
+
+  button:hover {
+    background: var(--bg-black-gradient);
+    cursor: grab;
   }
 `
 
